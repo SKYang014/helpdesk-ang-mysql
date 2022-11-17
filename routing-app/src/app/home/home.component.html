@@ -11,10 +11,13 @@
         ResolvedBy: <input type="text" [(ngModel)]="newResolvedBy" /><br />
 		<button (click)="saveNew()">Save</button>
 	</div>
-	<ng-container *ngFor="let ticket of TheList">
-		<app-ticket-detail [ticket]="ticket" 
-			(delete)="deleteOne($event)"
-			(update)="updateOne($event)"
-		></app-ticket-detail>
-	</ng-container>
+    <div>
+        <ng-container *ngFor="let ticket of TheList">
+            <app-ticket-detail [ticket] = "ticket"
+            (delete)="deleteOne($event)"
+            (update)="updateOne($event)">
+    
+            </app-ticket-detail>
+        </ng-container>
+    </div>
 </div>

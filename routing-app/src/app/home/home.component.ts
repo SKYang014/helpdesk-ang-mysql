@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiResponse } from '../api-response';
+// import { ApiResponse } from '../api-response';
 import { Ticket } from '../ticket';
 import { TicketService } from '../ticket.service';
 
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 	newBookmarked: boolean = false;
 	newResolved: boolean = false;
 	newResolvedInfo: string = '';
-  newResolvedBy: string = '';
+  	newResolvedBy: string = '';
 
   constructor(private ticketSrv: TicketService) { }
 
@@ -31,16 +31,22 @@ export class HomeComponent implements OnInit {
 
 			// This function receives the data
 			(result: Ticket[]) => {
-        console.log(result);
+        		console.log(result);
 				this.TheList = result;
+				console.log(this.TheList)
 			}
 
 		);
 	}
 
+//   test(item: any) {
+// 	console.log('===================');
+// 	console.log(item);
+//   }
+
   deleteOne(Id: number) {
 		this.ticketSrv.delete(
-				(result: ApiResponse) => {
+				() => {
 					console.log('BACK FROM DELETE');
 					this.refresh();
 				}, Id );
@@ -49,14 +55,14 @@ export class HomeComponent implements OnInit {
 
 	saveNew() {
 		let newTicket: Ticket = {
-			Id: 0,
-			Title: this.newTitle,
-			Description: this.newDescription,
-			SubmittedBy: this.newSubmittedBy,
-			Bookmarked: this.newBookmarked,
-			Resolved: this.newResolved,
-			ResolvedInfo: this.newResolvedInfo,
-      ResolvedBy: this.newResolvedBy
+			id: 0,
+			title: this.newTitle,
+			description: this.newDescription,
+			submittedBy: this.newSubmittedBy,
+			bookmarked: this.newBookmarked,
+			resolved: this.newResolved,
+			resolvedInfo: this.newResolvedInfo,
+      		resolvedBy: this.newResolvedBy
 		};
 
 		this.ticketSrv.add(
@@ -69,7 +75,7 @@ export class HomeComponent implements OnInit {
 
 	updateOne(updatedTicket: Ticket) {
 		this.ticketSrv.update(
-			(result: ApiResponse) => {
+			() => {
 				this.refresh();
 			},
 			updatedTicket

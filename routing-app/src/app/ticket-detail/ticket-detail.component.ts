@@ -9,27 +9,30 @@ import { Ticket } from '../ticket';
 export class TicketDetailComponent implements OnInit {
 
   @Input() ticket: Ticket = {
-    Id:0,
-    Title: '',
-    Description: '',
-    SubmittedBy: '',
-    Bookmarked: false,
-    Resolved: false,
-    ResolvedInfo: '',
-    ResolvedBy: '',
+	id:0,
+    title: '',
+    description: '',
+    submittedBy: '',
+    bookmarked: false,
+    resolved: false,
+    resolvedInfo: '',
+    resolvedBy: '',
 	};
 
 	@Output() delete:EventEmitter<number> = new EventEmitter<number>();
 	@Output() update:EventEmitter<Ticket> = new EventEmitter<Ticket>();
   
   editMode: boolean = false;
-	editTitle: string = '';
-	editDescription: string = '';
-	editSubmittedBy: string = '';
-	editBookmarked: boolean = false;
-	editResolved: boolean = false;
-	editResolvedInfo: string = '';
-  editResolvedBy: string = '';
+  editObj: Ticket = {
+    id:0,
+    title: '',
+    description: '',
+    submittedBy: '',
+    bookmarked: false,
+    resolved: false,
+    resolvedInfo: '',
+    resolvedBy: '',
+	};
 
 	constructor() { }
 
@@ -37,32 +40,34 @@ export class TicketDetailComponent implements OnInit {
 	}
 
 	deleteMe() {
-		this.delete.emit(this.ticket.Id);
+		// console.log(this.ticketId)
+		this.delete.emit(this.ticket.id);
 	}
 
 	turnOnEditMode() {
+		this.editObj.title = this.ticket.title;
+		this.editObj.description = this.ticket.description;
+		this.editObj.submittedBy = this.ticket.submittedBy;
+		this.editObj.bookmarked = this.ticket.bookmarked;
+		this.editObj.resolved = this.ticket.resolved;
+		this.editObj.resolvedInfo = this.ticket.resolvedInfo;
+		this.editObj.resolvedBy = this.ticket.resolvedBy;
 		this.editMode = true;
-    this.editTitle = this.ticket.Title;
-    this.editDescription = this.ticket.Description;
-    this.editSubmittedBy = this.ticket.SubmittedBy;
-    this.editBookmarked = this.ticket.Bookmarked;
-    this.editResolved = this.ticket.Resolved;
-    this.editResolvedInfo = this.ticket.ResolvedInfo;
-    this.editResolvedBy = this.ticket.ResolvedBy;
 	}
 
 	saveChanges() {
-		let updatedTicket: Ticket = {
-			Id: this.ticket.Id,
-			Title: this.editTitle,
-			Description: this.editDescription,
-			SubmittedBy: this.editSubmittedBy,
-			Bookmarked: this.editBookmarked,
-			Resolved: this.editResolved,
-			ResolvedInfo: this.editResolvedInfo,
-      ResolvedBy: this.editResolvedBy
-		};
-		this.update.emit(updatedTicket);
+		// let updatedTicket: Ticket = {
+		// id: this.ticketid,
+		// 	Title: this.editTitle,
+		// 	Description: this.editDescription,
+		// 	SubmittedBy: this.editSubmittedBy,
+		// 	Bookmarked: this.editBookmarked,
+		// 	Resolved: this.editResolved,
+		// 	ResolvedInfo: this.editResolvedInfo,
+    //   ResolvedBy: this.editResolvedBy
+	// 	};
+	this.editObj.id = this.ticket.id;
+		this.update.emit(this.editObj);
 	}
 
 	cancel() {

@@ -12,17 +12,17 @@ import { TicketService } from './ticket.service';
 export class AppComponent {
   title = 'HelpDesk';
 
-  constructor(public http: HttpClient, public ticketSrv: TicketService) { }
+  // constructor(public http: HttpClient, public ticketSrv: TicketService) { }
 
-  finishedWithCall(obj: any) {
-		console.log(obj);
-	}
+  // finishedWithCall(obj: any) {
+	// 	console.log(obj);
+	// }
 
-  getTickets() {
-		this.ticketSrv.getAll(
-			(result: Ticket[]) => {
-				console.log(result);
-			}
-		)
-	}
+  // getTickets() {
+	// 	this.ticketSrv.getAll(
+	// 		(result: Ticket[]) => {
+	// 			console.log(result);
+	// 		}
+	// 	)
+	// }
 }

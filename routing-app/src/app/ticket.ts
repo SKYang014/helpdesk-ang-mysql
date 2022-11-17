@@ -1,10 +1,10 @@
 export interface Ticket {
-    Id: number;
-    Title: string;
-    Description: string;
-    SubmittedBy: string;
-    Bookmarked: boolean;
-    Resolved: boolean;
-    ResolvedInfo: string;
-    ResolvedBy: string;
+    id: number;
+    title: string;
+    description: string;
+    submittedBy: string;
+    bookmarked: boolean;
+    resolved: boolean;
+    resolvedInfo: string;
+    resolvedBy: string;
 }

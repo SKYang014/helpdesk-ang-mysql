@@ -8,39 +8,27 @@ namespace backend_helpdesk.Controllers
     public class TicketController : ControllerBase
     {
         [HttpGet]
-        public List<Ticket> GetAll()
+        public IEnumerable<Ticket> GetAll()
         {
-            return Ticket.GetAll();
+            return DAL.GetAllTickets();
         }
 
-        // (R)ead one
-
-        [HttpGet("{id}")]
-        public Ticket Get(string id)
-        {
-            return Ticket.Get(id);
-        }
-
-        // (C)reate
         [HttpPost]
-        public Ticket Save(Ticket data)
+        public Ticket Add(Ticket ticket)
         {
-            return Ticket.Save(data);
+            return DAL.AddTicket(ticket);
         }
 
         [HttpDelete("{id}")]
-        public ApiResponse Delete(int id)
+        public void Delete(int id)
         {
-            Ticket.Delete(id);
-            return new ApiResponse() { status = "ok" };
+            DAL.Delete(id);
         }
 
-        // (U)pdate
         [HttpPut]
-        public ApiResponse Update(Ticket data)
+        public void Update(Ticket ticket)
         {
-            Ticket.Update(data);
-            return new ApiResponse() { status = "ok" };
+            DAL.Update(ticket);
         }
 
     }

@@ -1,1 +1,12 @@
-<p>bookmark works!</p>
+<div>
+    <ng-container *ngFor="let ticket of TheFavList" >
+        <ng-container *ngIf="ticket.bookmarked">
+        
+            <app-ticket-detail [ticket] = "ticket">
+                (delete)="deleteOne($event)"
+                (update)="updateOne($event)">
+            </app-ticket-detail>
+
+        </ng-container>
+    </ng-container>
+</div>

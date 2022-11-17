@@ -1,4 +1,4 @@
--- drop database helpdesk;
+drop database if exists helpdesk;
 create database helpdesk;
 use helpdesk;
 
@@ -14,6 +14,6 @@ create table Ticket (
     PRIMARY KEY (Id)
 );
 
-insert into  Ticket (Id, Title, Description, SubmittedBy, Bookmarked, Resolved, ResolvedInfo, ResolvedBy) values ('Mic doesnt work','Microphone not recognised by teams','Sarah',false,true, null, null);
-insert into  Ticket (Id, Title, Description, SubmittedBy, Bookmarked, Resolved, ResolvedInfo, ResolvedBy) values ('Monitor not turning on','Monitor not able to turn on when computer is on','Susie',true, true, 'Monitor not plugged in', 'Jessica');
+insert into  Ticket (Title, Description, SubmittedBy, Bookmarked, Resolved, ResolvedInfo, ResolvedBy) values ('Mic doesnt work','Microphone not recognised by teams','Sarah',false,true, null, null);
+insert into  Ticket (Title, Description, SubmittedBy, Bookmarked, Resolved, ResolvedInfo, ResolvedBy) values ('Monitor not turning on','Monitor not able to turn on when computer is on','Susie',true, true, 'Monitor not plugged in', 'Jessica');
 

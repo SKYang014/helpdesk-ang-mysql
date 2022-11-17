@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ApiResponse } from './api-response';
+// import { ApiResponse } from './api-response';
 import { Ticket } from './ticket';
 
 @Injectable({
@@ -21,11 +21,11 @@ export class TicketService {
 	}
 
 	delete(cb: any, id: number) {
-		this.http.delete<ApiResponse>(`https://localhost:7130/Ticket/${id}`).subscribe(cb);
+		this.http.delete(`https://localhost:7130/Ticket/${id}`).subscribe(cb);
 	}
 
 	update(cb: any, ticket: Ticket) {
-		this.http.put<ApiResponse>('https://localhost:7130/Ticket', ticket).subscribe(cb);
+		this.http.put('https://localhost:7130/Ticket', ticket).subscribe(cb);
 	}
 
 	constructor(private http: HttpClient) { }

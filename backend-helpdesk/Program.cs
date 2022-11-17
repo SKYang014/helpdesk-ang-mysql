@@ -1,7 +1,7 @@
 using MySql.Data.MySqlClient;
-using System.Configuration;
-using System.Data;
-using MySql.Data.MySqlClient;
+using backend_helpdesk;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -35,6 +35,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
+string connstring = app.Configuration.GetConnectionString("db");
+DAL.DB = new MySqlConnection(connstring); // Need the using statement above
 
 app.Run();
