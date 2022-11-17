@@ -29,10 +29,10 @@ namespace backend_helpdesk
             return DB.Get<Ticket>(id);
         }
 
-        public static Ticket Save(Ticket dep)
+        public static Ticket Save(Ticket data)
         {
-            DB.Insert(dep);
-            return dep;
+            DB.Insert(data);
+            return data;
         }
 
         public static void Delete(int id)

@@ -31,18 +31,19 @@ export class HomeComponent implements OnInit {
 
 			// This function receives the data
 			(result: Ticket[]) => {
+        console.log(result);
 				this.TheList = result;
 			}
 
 		);
 	}
 
-  deleteOne(id: number) {
+  deleteOne(Id: number) {
 		this.ticketSrv.delete(
 				(result: ApiResponse) => {
 					console.log('BACK FROM DELETE');
 					this.refresh();
-				}, id );
+				}, Id );
 		console.log('LINE AFTER DELETE');
 	}
 

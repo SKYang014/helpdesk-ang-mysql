@@ -18,7 +18,7 @@ export class AppComponent {
 		console.log(obj);
 	}
 
-  getDepartments() {
+  getTickets() {
 		this.ticketSrv.getAll(
 			(result: Ticket[]) => {
 				console.log(result);
