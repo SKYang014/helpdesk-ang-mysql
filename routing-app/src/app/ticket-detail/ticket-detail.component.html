@@ -1,0 +1,64 @@
+<div *ngIf="!editMode">
+	<table rules="all">
+		<tbody>
+			<tr>
+				<td>id</td><td>{{ ticket.Id }} </td>
+			</tr>
+			<tr>
+				<td>Ticket Title</td><td>{{ ticket.Title }} </td>
+			</tr>
+			<tr>
+				<td>Description</td><td>{{ ticket.Description }} </td>
+			</tr>
+			<tr>
+				<td>SubmittedBy</td><td>{{ ticket.SubmittedBy }} </td>
+			</tr>
+			<tr>
+				<td>Bookmarked</td><td>{{ ticket.Bookmarked }} </td>
+			</tr>
+			<tr>
+				<td>Resolved</td><td>{{ ticket.Resolved }} </td>
+			</tr>
+			<tr>
+				<td>ResolvedInfo</td><td>{{ ticket.ResolvedInfo }} </td>
+			</tr>
+            <tr>
+				<td>ResolvedBy</td><td>{{ ticket.ResolvedBy }} </td>
+			</tr>
+		</tbody>
+	</table>
+	<button (click)="turnOnEditMode()">Edit</button>
+	<button (click)="deleteMe()">Delete</button>
+</div>
+<div *ngIf="editMode">
+	<table rules="all">
+		<tbody>
+			<tr>
+				<td>id</td><td>{{ ticket.Id }} </td>
+			</tr>
+			<tr>
+				<td>Ticket Title</td><td><input type="text" [(ngModel)]="editTitle" /></td>
+			</tr>
+			<tr>
+				<td>Description</td><td><input type="text" [(ngModel)]="editDescription" /></td>
+			</tr>
+			<tr>
+				<td>SubmittedBy</td><td><input type="text" [(ngModel)]="editSubmittedBy" /></td>
+			</tr>
+			<tr>
+				<td>Bookmarked</td><td><input type="text" [(ngModel)]="editBookmarked" /></td>
+			</tr>
+			<tr>
+				<td>Resolved</td><td><input type="text" [(ngModel)]="editResolved" /></td>
+			</tr>
+			<tr>
+				<td>Resolved Info</td><td><input type="text" [(ngModel)]="editResolvedInfo" /></td>
+			</tr>
+            <tr>
+				<td>Resolved By</td><td><input type="text" [(ngModel)]="editResolvedBy" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<button (click)="saveChanges()">Save Changes</button>
+	<button (click)="cancel()">Cancel</button>
+</div>

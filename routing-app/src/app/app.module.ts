@@ -7,14 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
-import { NewticketComponent } from './newticket/newticket.component';
+import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BookmarkComponent,
-    NewticketComponent
+    TicketDetailComponent
   ],
   imports: [
     BrowserModule,
