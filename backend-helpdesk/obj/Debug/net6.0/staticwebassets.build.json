@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "q+JJM5OkVRlSWMQMcPiG0oIE0Y3MTc5Ah+J8w68QqBY=",
+  "Source": "backend-helpdesk",
+  "BasePath": "_content/backend-helpdesk",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
