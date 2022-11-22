@@ -1,66 +1,51 @@
-<div *ngIf="!editMode">
-	<!-- {{ticket.Id}}<br/>
-		contains {{ticket.Title}} -->
-	<table rules="all">
-		<tbody>
-			<tr>
-				<td>id</td><td>{{ ticket.id }} </td>
-			</tr>
-			<tr>
-				<td>Ticket Title</td><td>{{ ticket.title }} </td>
-			</tr>
-			<tr>
-				<td>Description</td><td>{{ ticket.description }} </td>
-			</tr>
-			<tr>
-				<td>SubmittedBy</td><td>{{ ticket.submittedBy }} </td>
-			</tr>
-			<tr>
-				<td>Bookmarked</td><td>{{ ticket.bookmarked }} </td>
-			</tr>
-			<tr>
-				<td>Resolved</td><td>{{ ticket.resolved }} </td>
-			</tr>
-			<tr>
-				<td>ResolvedInfo</td><td>{{ ticket.resolvedInfo }} </td>
-			</tr>
-            <tr>
-				<td>ResolvedBy</td><td>{{ ticket.resolvedBy }} </td>
-			</tr>
-		</tbody>
-	</table>
-	<button (click)="turnOnEditMode()">Edit</button>
-	<button (click)="deleteMe()">Delete</button>
-</div>
-<div *ngIf="editMode">
-	<table rules="all">
-		<tbody>
-			<tr>
-				<td>id</td><td>{{ ticket.id }} </td>
-			</tr>
-			<tr>
-				<td>Ticket Title</td><td><input type="text" [(ngModel)]="editObj.title" /></td>
-			</tr>
-			<tr>
-				<td>Description</td><td><input type="text" [(ngModel)]="editObj.description" /></td>
-			</tr>
-			<tr>
-				<td>SubmittedBy</td><td><input type="text" [(ngModel)]="editObj.submittedBy" /></td>
-			</tr>
-			<tr>
+<div class="card card-1">
+	<div *ngIf="!editMode">
+			<div class="card__icon"><i class="fas fa-bolt"></i></div>
+			<p class="card__exit"><i class="fas fa-times"></i></p>
+			<h2 class="card__title">Ticket #{{ticket.id}} <br/>{{ ticket.title }} </h2>
+			<h3>{{ticket.description}}</h3>
+			<h3>Submitted By: {{ticket.submittedBy}}</h3>
+			<!-- cannot use ternary in angular for html -->
+			<i *ngIf="ticket.bookmarked">Bookmark ★</i>
+			<i *ngIf="!ticket.bookmarked">Bookmark ☆</i>
+			<p *ngIf="ticket.resolved">Resolved</p>
+			<p *ngIf="!ticket.resolved">Unresolved</p>
+			<p *ngIf="ticket.resolved">{{ticket.resolvedInfo}}<br/>Resolved By: {{ticket.resolvedBy}}</p>
+			<div class="button-holder">
+				<button *ngIf="router.url === '/'" (click)="turnOnEditMode()">Edit</button>
+				<button *ngIf="router.url === '/'"(click)="deleteMe()">Delete</button>
+			</div>
+	</div>
+	<div *ngIf="editMode">
+		<table rules="all">
+			<tbody>
+				<tr>
+					<td>id</td><td>{{ ticket.id }} </td>
+				</tr>
+				<tr>
+					<td>Ticket Title</td><td><input type="text" [(ngModel)]="editObj.title" /></td>
+				</tr>
+				<tr>
+					<td>Description</td><td><input type="text" [(ngModel)]="editObj.description" /></td>
+				</tr>
+				<tr>
+					<td>SubmittedBy</td><td><input type="text" [(ngModel)]="editObj.submittedBy" /></td>
+				</tr>
+				<tr>
 				<td>Bookmarked</td><td><input type="checkbox" [(ngModel)]="editObj.bookmarked" /></td>
-			</tr>
-			<tr>
-				<td>Resolved</td><td><input type="checkbox" [(ngModel)]="editObj.resolved" /></td>
-			</tr>
-			<tr>
-				<td>Resolved Info</td><td><input type="text" [(ngModel)]="editObj.resolvedInfo" /></td>
-			</tr>
-            <tr>
-				<td>Resolved By</td><td><input type="text" [(ngModel)]="editObj.resolvedBy" /></td>
-			</tr>
-		</tbody>
-	</table>
-	<button (click)="saveChanges()">Save Changes</button>
-	<button (click)="cancel()">Cancel</button>
+				</tr>	
+				<tr>
+					<td>Resolved</td><td><input type="checkbox" [(ngModel)]="editObj.resolved" /></td>
+				</tr>
+				<tr *ngIf="editObj.resolved">
+					<td>Resolved Info</td><td><input type="text" [(ngModel)]="editObj.resolvedInfo" /></td>
+				</tr>
+				<tr *ngIf="editObj.resolved">
+					<td>Resolved By</td><td><input type="text" [(ngModel)]="editObj.resolvedBy" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<button (click)="saveChanges()">Save Changes</button>
+		<button (click)="cancel()">Cancel</button>
+	</div>
 </div>

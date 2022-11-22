@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { Ticket } from '../ticket';
 
 @Component({
@@ -34,7 +35,7 @@ export class TicketDetailComponent implements OnInit {
     resolvedBy: '',
 	};
 
-	constructor() { }
+	constructor(public router: Router) { }
 
 	ngOnInit(): void {
 	}

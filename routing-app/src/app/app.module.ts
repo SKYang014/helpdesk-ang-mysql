@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
 import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
-import { BookmarkTicketDetailComponent } from './bookmark-ticket-detail/bookmark-ticket-detail.component';
+import { AllTicketsComponent } from './all-tickets/all-tickets.component';
+// import { BookmarkTicketDetailComponent } from './bookmark-ticket-detail/bookmark-ticket-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { BookmarkTicketDetailComponent } from './bookmark-ticket-detail/bookmark
     HomeComponent,
     BookmarkComponent,
     TicketDetailComponent,
-    BookmarkTicketDetailComponent
+    AllTicketsComponent,
   ],
   imports: [
     BrowserModule,

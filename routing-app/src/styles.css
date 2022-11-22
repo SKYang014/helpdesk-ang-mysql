@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+::ng-deep :root {
+    --primary:  #2E2F29ff;
+    --secondary: #E8D5DFff;
+    --teriary: #E19A83ff;
+    --quartenary: #7a92e6;
+    --pentary: #5B5D63ff;
+}
+
+body{
+    background-color: var(--primary);
+    color: var(--pentary)
+  }

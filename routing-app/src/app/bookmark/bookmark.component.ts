@@ -3,24 +3,26 @@ import { Ticket } from '../ticket';
 import { TicketService } from '../ticket.service';
 
 @Component({
-  selector: 'app-bookmark',
-  templateUrl: './bookmark.component.html',
-  styleUrls: ['./bookmark.component.css']
+selector: 'app-bookmark',
+templateUrl: './bookmark.component.html',
+styleUrls: ['./bookmark.component.css']
 })
 export class BookmarkComponent implements OnInit {
-  TheFavList: Ticket[] = [];
-  constructor(private ticketSrv: TicketService) { }
 
-  ngOnInit(): void {
-    this.refresh();
-  }
+TheFavList: Ticket[] = [];
 
-  refresh() {
+constructor(private ticketSrv: TicketService) { }
+
+ngOnInit(): void {
+	this.refresh();
+}
+
+refresh() {
 		this.ticketSrv.getAll(
 
 			// This function receives the data
 			(result: Ticket[]) => {
-        		console.log(result);
+				console.log(result);
 				this.TheFavList = result;
 				console.log(this.TheFavList)
 			}
@@ -28,7 +30,7 @@ export class BookmarkComponent implements OnInit {
 		);
 	}
 
-  deleteOne(Id: number) {
+deleteOne(Id: number) {
 		this.ticketSrv.delete(
 				() => {
 					console.log('BACK FROM DELETE');
@@ -37,7 +39,7 @@ export class BookmarkComponent implements OnInit {
 		console.log('LINE AFTER DELETE');
 	}
 
-  updateOne(updatedTicket: Ticket) {
+updateOne(updatedTicket: Ticket) {
 		this.ticketSrv.update(
 			() => {
 				this.refresh();

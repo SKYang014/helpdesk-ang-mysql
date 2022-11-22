@@ -4,13 +4,13 @@ import { Ticket } from '../ticket';
 import { TicketService } from '../ticket.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+selector: 'app-home',
+templateUrl: './home.component.html',
+styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
-  TheList: Ticket[] = [];
+TheList: Ticket[] = [];
 
 	// Variables for entering a new employee
 	newTitle: string = '';
@@ -19,19 +19,20 @@ export class HomeComponent implements OnInit {
 	newBookmarked: boolean = false;
 	newResolved: boolean = false;
 	newResolvedInfo: string = '';
-  	newResolvedBy: string = '';
+	newResolvedBy: string = '';
 
-  constructor(private ticketSrv: TicketService) { }
+constructor(private ticketSrv: TicketService) { }
 
 	ngOnInit(): void {
 		this.refresh();
 	}
-  refresh() {
+	
+refresh() {
 		this.ticketSrv.getAll(
 
 			// This function receives the data
 			(result: Ticket[]) => {
-        		console.log(result);
+				console.log(result);
 				this.TheList = result;
 				console.log(this.TheList)
 			}
@@ -44,7 +45,7 @@ export class HomeComponent implements OnInit {
 // 	console.log(item);
 //   }
 
-  deleteOne(Id: number) {
+deleteOne(Id: number) {
 		this.ticketSrv.delete(
 				() => {
 					console.log('BACK FROM DELETE');
@@ -62,7 +63,7 @@ export class HomeComponent implements OnInit {
 			bookmarked: this.newBookmarked,
 			resolved: this.newResolved,
 			resolvedInfo: this.newResolvedInfo,
-      		resolvedBy: this.newResolvedBy
+			resolvedBy: this.newResolvedBy
 		};
 
 		this.ticketSrv.add(

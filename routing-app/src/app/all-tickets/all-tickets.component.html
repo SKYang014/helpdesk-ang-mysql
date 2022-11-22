@@ -1,0 +1,11 @@
+<div class="ticket-holder">
+    <ng-container *ngFor="let ticket of TheFavList" >
+
+        
+            <app-ticket-detail [ticket] = "ticket">
+                (delete)="deleteOne($event)"
+                (update)="updateOne($event)">
+            </app-ticket-detail>
+
+    </ng-container>
+</div>

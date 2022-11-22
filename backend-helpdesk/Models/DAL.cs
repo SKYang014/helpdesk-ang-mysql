@@ -29,7 +29,7 @@ namespace backend_helpdesk
 
         public static void Delete(int id)
         {
-            DB.Delete(new Ticket() { Id = id });
+            DB.Delete(new Ticket() { id = id });
         }
 
         public static void Update(Ticket ticket)

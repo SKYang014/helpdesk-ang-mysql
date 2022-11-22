@@ -8,14 +8,14 @@ namespace backend_helpdesk
     public class Ticket
     {
         [Key]
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string SubmittedBy { get; set; }
-        public bool Bookmarked { get; set; }
-        public bool Resolved { get; set; }
-        public string ResolvedInfo { get; set; }
-        public string? ResolvedBy  { get; set;}
+        public int id { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public string submittedBy { get; set; }
+        public bool bookmarked { get; set; }
+        public bool resolved { get; set; }
+        public string? resolvedInfo { get; set; }
+        public string? resolvedBy  { get; set;}
 
        
     }

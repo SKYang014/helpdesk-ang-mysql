@@ -1,23 +1,33 @@
 <div>
-    <!-- <button (click)="getTickets()">Get Departments</button> -->
-	<div>
-		<h1>Add New Ticket</h1>
-		Title: <input type="text" [(ngModel)]="newTitle" /><br />
-		Description: <input type="text" [(ngModel)]="newDescription" /><br />
-		Submitted By: <input type="text" [(ngModel)]="newSubmittedBy" /><br />
-		Bookmarked: <input type="checkbox" [(ngModel)]="newBookmarked" /><br />
-		Resolved: <input type="checkbox" [(ngModel)]="newResolved" /><br />
-		ResolvedInfo: <input type="text" [(ngModel)]="newResolvedInfo" /><br />
-        ResolvedBy: <input type="text" [(ngModel)]="newResolvedBy" /><br />
-		<button (click)="saveNew()">Save</button>
-	</div>
-    <div>
+    <h1>Open Ticket Dashboard</h1>
+    <input type="checkbox" id="toggle">
+    <label for="toggle">Create Ticket</label>
+    
+    <dialog >
+        <div>
+            <h1>Add New Ticket</h1>
+            Title: <input type="text" [(ngModel)]="newTitle" /><br />
+            Description: <input type="text" [(ngModel)]="newDescription" /><br />
+            Submitted By: <input type="text" [(ngModel)]="newSubmittedBy" /><br />
+            Bookmarked: <input type="checkbox" [(ngModel)]="newBookmarked" /><br />
+            <!-- Resolved: <input type="checkbox" [(ngModel)]="newResolved" /><br />
+            ResolvedInfo: <input type="text" [(ngModel)]="newResolvedInfo" /><br />
+            ResolvedBy: <input type="text" [(ngModel)]="newResolvedBy" /><br /> -->
+        </div>
+        <div class="button-holder">
+            <label (click)="saveNew()">Save</label>
+            <label for="toggle">Cancel</label>
+        </div>
+    </dialog>
+    <div class="ticket-holder">
         <ng-container *ngFor="let ticket of TheList">
+        <ng-container *ngIf="!ticket.resolved" >
+
             <app-ticket-detail [ticket] = "ticket"
             (delete)="deleteOne($event)"
             (update)="updateOne($event)">
-    
             </app-ticket-detail>
+        </ng-container>
         </ng-container>
     </div>
 </div>

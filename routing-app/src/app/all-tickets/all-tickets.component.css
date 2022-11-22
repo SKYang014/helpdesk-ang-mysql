@@ -1,0 +1,15 @@
+/* ::ng-deep :root {
+  --primary: #D0F1BF;
+  --secondary: #b6d7b9;
+  --teriary: #9ABD97;
+  --quartenary: #646536;
+  --pentary: #483D03;
+} */
+
+.ticket-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
