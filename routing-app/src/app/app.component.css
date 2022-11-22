@@ -17,27 +17,20 @@
     height: 100%;
 }
 
-/* The hero image */
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/lighthouse.jpg");
-
-  /* Set a specific height */
-  height: 50%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+nav{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
 }
 
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+a {
+  text-decoration: none;
+  color: var(--teriary);
+  padding: 10px;
+  font-size: 200%;
+}
+a:hover {
+  color: var(--primary);
+  border-radius: 4px;
+  background: var(--secondary)
 }

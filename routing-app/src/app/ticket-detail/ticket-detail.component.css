@@ -9,7 +9,9 @@
 table {
 	border: 1px solid black;
 }
-
+h3{
+	color: var(--secondary)
+}
 /* https://codepen.io/ericmahoney/pen/oNLMOYw */
 * {
 	margin: 0;
@@ -17,10 +19,6 @@ table {
 	box-sizing: border-box;
   }
   
-  body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-	  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
   
   .main-container {
 	padding: 30px;
@@ -38,7 +36,7 @@ table {
   
   .heading__credits {
 	margin: 10px 0px;
-	color: #888888;
+	color: var(--secondary);
 	font-size: 25px;
 	transition: all 0.5s;
   }
@@ -112,7 +110,7 @@ table {
   .card__title {
 	grid-row: 3/4;
 	font-weight: 400;
-	color: var(--pentary);
+	/* color: var(--pentary); */
   }
   
   .card__apply {
@@ -123,7 +121,7 @@ table {
   /* CARD BACKGROUNDS */
   
   .card-1 {
-	background: radial-gradient(var(--primary), var(--secondary));
+	background: radial-gradient(var(--pentary), var(--primary));
   }
   
   /* RESPONSIVE */

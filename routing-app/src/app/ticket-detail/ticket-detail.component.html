@@ -1,16 +1,16 @@
 <div class="card card-1">
 	<div *ngIf="!editMode">
-			<div class="card__icon"><i class="fas fa-bolt"></i></div>
-			<p class="card__exit"><i class="fas fa-times"></i></p>
-			<h2 class="card__title">Ticket #{{ticket.id}} <br/>{{ ticket.title }} </h2>
+			<!-- <div class="card__icon"><i class="fas fa-bolt"></i></div>
+			<p class="card__exit"><i class="fas fa-times"></i></p> -->
+			<h3 class="card__title">Ticket #{{ticket.id}} <br/>{{ ticket.title }} </h3>
 			<h3>{{ticket.description}}</h3>
 			<h3>Submitted By: {{ticket.submittedBy}}</h3>
 			<!-- cannot use ternary in angular for html -->
-			<i *ngIf="ticket.bookmarked">Bookmark ★</i>
-			<i *ngIf="!ticket.bookmarked">Bookmark ☆</i>
-			<p *ngIf="ticket.resolved">Resolved</p>
-			<p *ngIf="!ticket.resolved">Unresolved</p>
-			<p *ngIf="ticket.resolved">{{ticket.resolvedInfo}}<br/>Resolved By: {{ticket.resolvedBy}}</p>
+			<h3 *ngIf="ticket.bookmarked">Bookmark ★</h3>
+			<h3 *ngIf="!ticket.bookmarked">Bookmark ☆</h3>
+			<h3 *ngIf="ticket.resolved">Resolved</h3>
+			<h3 *ngIf="!ticket.resolved">Unresolved</h3>
+			<h3 *ngIf="ticket.resolved">{{ticket.resolvedInfo}}<br/>Resolved By: {{ticket.resolvedBy}}</h3>
 			<div class="button-holder">
 				<button *ngIf="router.url === '/'" (click)="turnOnEditMode()">Edit</button>
 				<button *ngIf="router.url === '/'"(click)="deleteMe()">Delete</button>

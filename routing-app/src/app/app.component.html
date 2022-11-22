@@ -1,17 +1,11 @@
+
 <nav>
-    <h1>Chirpus Help Desk</h1>
-    <a routerLink="/">Open Tickets</a>
+    <a *ngIf="router.url === '/'"  routerLink="/">Open Tickets</a>
     &nbsp;&nbsp;
     <a routerLink="/bookmarked">Bookmarked Tickets</a>
     &nbsp;&nbsp;
     <a routerLink="/allTickets">View All Tickets</a>
 </nav>
-<div class="hero-image">
-    <div class="hero-text">
-      <h1>I am John Doe</h1>
-      <p>And I'm a Photographer</p>
-      <button>Hire me</button>
-    </div>
-  </div>
-<hr />
+
+<!-- <hr /> -->
 <router-outlet></router-outlet>
