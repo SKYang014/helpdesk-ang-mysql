@@ -21,13 +21,12 @@
     </dialog>
     <div class="ticket-holder">
         <ng-container *ngFor="let ticket of TheList">
-        <ng-container *ngIf="!ticket.resolved" >
-
-            <app-ticket-detail [ticket] = "ticket"
-            (delete)="deleteOne($event)"
-            (update)="updateOne($event)">
-            </app-ticket-detail>
-        </ng-container>
+            <ng-container *ngIf="!ticket.resolved" >
+                <app-ticket-detail [ticket] = "ticket"
+                (delete)="deleteOne($event)"
+                (update)="updateOne($event)">
+                </app-ticket-detail>
+            </ng-container>
         </ng-container>
     </div>
 </div>

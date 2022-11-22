@@ -12,8 +12,8 @@
 			<h3 *ngIf="!ticket.resolved">Unresolved</h3>
 			<h3 *ngIf="ticket.resolved">{{ticket.resolvedInfo}}<br/>Resolved By: {{ticket.resolvedBy}}</h3>
 			<div class="button-holder">
-				<button *ngIf="router.url === '/'" (click)="turnOnEditMode()">Edit</button>
-				<button *ngIf="router.url === '/'"(click)="deleteMe()">Delete</button>
+				<button  (click)="turnOnEditMode()">Edit</button>
+				<button (click)="deleteMe()">Delete</button>
 			</div>
 	</div>
 	<div *ngIf="editMode">

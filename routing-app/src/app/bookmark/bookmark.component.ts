@@ -9,7 +9,7 @@ styleUrls: ['./bookmark.component.css']
 })
 export class BookmarkComponent implements OnInit {
 
-TheFavList: Ticket[] = [];
+TheList: Ticket[] = [];
 
 constructor(private ticketSrv: TicketService) { }
 
@@ -23,8 +23,8 @@ refresh() {
 			// This function receives the data
 			(result: Ticket[]) => {
 				console.log(result);
-				this.TheFavList = result;
-				console.log(this.TheFavList)
+				this.TheList = result;
+				console.log(this.TheList)
 			}
 
 		);

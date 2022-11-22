@@ -34,3 +34,7 @@ a:hover {
   border-radius: 4px;
   background: var(--secondary)
 }
+
+.currentCat {
+  text-decoration: underline;
+}
