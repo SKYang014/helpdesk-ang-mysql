@@ -1,10 +1,10 @@
 
 <nav>
-    <a [ngClass]="{'currentCat': router.url === '/'}" routerLink="/">Open Tickets</a>
+    <a [ngClass]="{'currentCat': router.url === '/'}" routerLink="/">All Tickets</a>
     &nbsp;&nbsp;
     <a [ngClass]="{'currentCat': router.url === '/bookmarked'}" routerLink="/bookmarked">Bookmarked Tickets</a>
     &nbsp;&nbsp;
-    <a [ngClass]="{'currentCat': router.url === '/allTickets'}" routerLink="/allTickets">View All Tickets</a>
+    <a [ngClass]="{'currentCat': router.url === '/allTickets'}" routerLink="/allTickets">Open Tickets</a>
 </nav>
 
 <router-outlet></router-outlet>

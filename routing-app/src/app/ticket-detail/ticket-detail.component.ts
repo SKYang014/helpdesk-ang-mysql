@@ -46,6 +46,7 @@ export class TicketDetailComponent implements OnInit {
 	}
 
 	turnOnEditMode() {
+		console.log("im in editmode");
 		this.editObj.title = this.ticket.title;
 		this.editObj.description = this.ticket.description;
 		this.editObj.submittedBy = this.ticket.submittedBy;
@@ -57,17 +58,8 @@ export class TicketDetailComponent implements OnInit {
 	}
 
 	saveChanges() {
-		// let updatedTicket: Ticket = {
-		// id: this.ticketid,
-		// 	Title: this.editTitle,
-		// 	Description: this.editDescription,
-		// 	SubmittedBy: this.editSubmittedBy,
-		// 	Bookmarked: this.editBookmarked,
-		// 	Resolved: this.editResolved,
-		// 	ResolvedInfo: this.editResolvedInfo,
-    //   ResolvedBy: this.editResolvedBy
-	// 	};
-	this.editObj.id = this.ticket.id;
+		console.log("im in saved")
+		this.editObj.id = this.ticket.id;
 		this.update.emit(this.editObj);
 	}
 

@@ -77,10 +77,12 @@ deleteOne(Id: number) {
 	updateOne(updatedTicket: Ticket) {
 		this.ticketSrv.update(
 			() => {
+				console.log("i refreshed")
 				this.refresh();
 			},
 			updatedTicket
-		);
+			);
+			console.log("after refreshed")
 	}
 
 }

@@ -46,6 +46,7 @@ updateOne(updatedTicket: Ticket) {
 			},
 			updatedTicket
 		);
+		console.log('im in bookmark update')
 	}
 
 }
